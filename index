@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Nom - Micro-entreprise Informatique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur le site de ma micro-entreprise informatique</h1>
+    </header>
+    <main>
+        <p>Découvrez mes services en gestion de données, automatisation et CRM.</p>
+    </main>
+    <footer>
+        <p>Contactez-moi : <a href="mailto:votre-email@example.com">votre-email@example.com</a></p>
+    </footer>
+</body>
+</html>
