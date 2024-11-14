@@ -1,12 +1,130 @@
+/* Styles généraux */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
 }
-header, footer {
-    background-color: #f4f4f4;
-    padding: 10px;
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+/* Bannière de présentation */
+.banner {
+    background: #333;
+    color: #e0e0e0;
+    padding: 60px 20px;
     text-align: center;
+    background-image: url('https://via.placeholder.com/1600x400'); /* Image de fond libre de droit */
+    background-size: cover;
+    background-position: center;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #f0f0f0;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    color: #cfcfcf;
+}
+
+/* Styles des onglets */
+.tabs {
+    display: flex;
+    background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px 20px;
+    cursor: pointer;
+    background: #282828;
+    color: #e0e0e0;
+    border: none;
+    outline: none;
+    transition: background 0.3s, color 0.3s;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.tab-button:hover {
+    background: #3a3a3a;
+    color: #f5f5f5;
+}
+
+.tab-button.active {
+    background: #555;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Styles du contenu des onglets */
+
+
+/* Animation pour le contenu des onglets */
+.tab-content {
+    display: none;
+    padding: 20px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px); /* Position initiale pour l'effet de glissement */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transition douce */
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Position finale pour l'effet de glissement */
+}
+
+
+/* Style des images */
+.content-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Titres et sections */
+h2 {
+    color: #d3d3d3;
+}
+
+h3 {
+    color: #bdbdbd;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: '•';
+    color: #757575;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+html {
+    scroll-behavior: smooth; /* Rend le défilement fluide */
 }
