@@ -3,42 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site Web</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers un fichier CSS si vous en avez -->
+    <link rel="stylesheet" href="style.css">
+    <title>Mon Site Stylé</title>
+    
+    <!-- Google Calendar Appointment Scheduling -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur mon site !</h1>
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Bannière de présentation -->
+    <header class="banner">
+        <h1>Bienvenue sur notre Site</h1>
+        <p>Découvrez nos services et solutions adaptés à vos besoins</p>
     </header>
 
-    <section id="accueil">
-        <h2>À propos de moi</h2>
-        <p>Je suis Laeticia Miguel, et voici mon site web pour présenter mes projets et services !</p>
-    </section>
+    <div class="container">
+        <nav class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'accueil')">Accueil</button>
+            <button class="tab-button" onclick="openTab(event, 'contact')">Nous Contacter</button>
+            <button class="tab-button" onclick="openTab(event, 'apropos')">À Propos</button>
+            <button class="tab-button" onclick="openTab(event, 'services')">Les Services</button>
+        </nav>
+        
+        <div id="accueil" class="tab-content active">
+            <h2>Bienvenue sur notre site !</h2>
+            <p>Ceci est la page d'accueil.</p>
+            <!-- Image libre de droit -->
+            <img src="https://via.placeholder.com/800x400" alt="Présentation de l'entreprise" class="content-image">
+        </div>
+        
+        <div id="contact" class="tab-content">
+            <p>Bienvenue ! Je suis ravie de vous accueillir sur cette page. Que vous ayez besoin de renseignements ou que vous souhaitiez collaborer, n'hésitez pas à me contacter ou à réserver un rendez-vous directement.</p>
 
-    <section id="services">
-        <h2>Mes Services</h2>
-        <ul>
-            <li>Développement web</li>
-            <li>Automatisation des processus</li>
-            <li>Consultation en IA</li>
-        </ul>
-    </section>
+            <h3>Prendre un rendez-vous :</h3>
+            <div id="calendar-button"></div>
+            
+            <h3>Informations de contact</h3>
+            <p>Email : contact@monentreprise.com</p>
+            <p>Téléphone : +33 1 23 45 67 89</p>
 
-    <section id="contact">
-        <h2>Contactez-moi</h2>
-        <p>Envoyez-moi un message à <a href="mailto:laeticia.miguel@example.com">laeticia.miguel@example.com</a>.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Laeticia Miguel. Tous droits réservés.</p>
-    </footer>
+            <h3>Nos horaires</h3>
+            <ul>
+                <li>Lundi au Vendredi : 9h00 - 18h00</li>
+                <li>Samedi : 10h00 - 14h00</li>
+                <li>Dimanche : Fermé</li>
+            </ul>
+        </div>
+        
+        <div id="apropos" class="tab-content">
+            <h2>À Propos</h2>
+            <p>Informations sur notre entreprise.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Image d'équipe" class="content-image">
+        </div>
+        
+        <div id="services" class="tab-content">
+            <h2>Les Services</h2>
+            <h3>À propos de l'entreprise</h3>
+            <p>Au cœur de notre activité se trouve une volonté d'accompagner les entreprises dans leur transformation digitale.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Image de service" class="content-image">
+        </div>
+    </div>
+    <script>
+        (function() {
+            var target = document.getElementById('calendar-button'); // Place le bouton dans la div cible
+            window.addEventListener('load', function() {
+                calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ19EOYs42ZjyBVclMVAT48O2AH3Ff3VJ8K6LHqAVtAHXJYyV1oooQwrXF5DBFPCZmBnOqIme2ns?gv=true',
+                    color: '#888888',  // Nuance de gris pour le bouton
+                    label: 'Réserver un rendez-vous',
+                    target,
+                });
+            });
+        })();
+    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
